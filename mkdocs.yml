@@ -1,0 +1,4 @@
+site_name: ytamang.com
+nav:
+  - Blogs: index.md
+  - About: about.md
