@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Index - ytamang.com</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">ytamang.com</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Blogs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#notes" class="nav-link">Notes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ch-1-introduction" class="nav-link">CH 1: Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-2-map-and-computing" class="nav-link">CH 2: Map and // Computing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-3-function-pipelines" class="nav-link">CH 3: Function pipelines</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-4-lazy-workflows" class="nav-link">CH 4: Lazy Workflows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../..">&lt;&lt; Back to Home</a></p>
+<h1 id="notes">Notes</h1>
+<h2 id="ch-1-introduction">CH 1: Introduction</h2>
+<ol>
+<li><code>map</code> and <code>reduce</code> can be combined to execute "transform and consolidate" workflows.</li>
+<li><code>map</code> is one-to-one transformation, <code>reduce</code> is one-to-any transformation (Assembling/Consolidating)</li>
+<li>Shopify has 10PB of MP3s would take 20,000 years to play.</li>
+<li>Hadoop distributes both data storage and processing.</li>
+<li>Hadoop provides a layer of abstraction on top of DFS that allows us to run highly // MR jobs</li>
+<li>Spark does more of its work in memory instead of by writing to files.</li>
+<li>AWS Elastic MR (EMR)</li>
+<li>AWS approach</li>
+</ol>
+<h2 id="ch-2-map-and-computing">CH 2: Map and // Computing</h2>
+<ol>
+<li>map is powerful lazy function, instructions are saved for evaluating the function and runs only when we ask for the value.</li>
+<li>Python <code>map</code> converts sequence of inputs --&gt; instructions for computing</li>
+<li>get #cpus</li>
+</ol>
+<pre><code class="python">import os
+print(os.cpu_count())
+</code></pre>
+
+<h3 id="21-pickling">2.1 Pickling</h3>
+<ol>
+<li>Python's version of object serialization or marshalling</li>
+<li>it allows moving code objects(functions+data) across machines.</li>
+<li><code>pickle-work-pickle</code> approach</li>
+<li><code>multiprocessing</code> module does not pickle <code>1. Lambda functions, 2. Nested functions, 3. Nested classes</code></li>
+<li>Use third party library for them (like <code>pathos</code>)</li>
+</ol>
+<h3 id="22-order-and-ization">2.2 Order and //ization</h3>
+<h2 id="ch-3-function-pipelines">CH 3: Function pipelines</h2>
+<ul>
+<li>helper functions and function chains</li>
+<li>use <code>compose</code> [Write in reverse order] and <code>pipe</code> from <code>toolz</code> (decode hacker messages)</li>
+</ul>
+<h2 id="ch-4-lazy-workflows">CH 4: Lazy Workflows</h2>
+<ul>
+<li>Lazy and Eager evaluation</li>
+<li>
+<p>Some lazy functions:<br />
+  --&gt; <code>filter</code><br />
+  --&gt; <code>zip</code><br />
+  --&gt; <code>iglob</code>: Lazy way to query filesystems</p>
+</li>
+<li>
+<p>Important other functions: <code>filterfalse</code>, <code>keyfilter</code>, <code>valfilter</code> and <code>itemfilter</code></p>
+</li>
+</ul>
+<h4 id="41-iterators">4.1 Iterators</h4>
+<ul>
+<li><strong>Iterators</strong> can move through in sequence <strong>Generators</strong> generate sequences</li>
+<li>we can loop over items of an iterator, or we can map a function across one.</li>
+<li>
+<p>The process is defined by method <code>__iter__()</code> and returns object with a <code>__next__()</code> method.</p>
+</li>
+<li>
+<p>All our lazy friends are one-way streets; once we call next. item returned to us is removed from sequence.</p>
+</li>
+<li>Iterators are not for by-hand inspection, they are meant for processing big data. They use less memory and offer better performance.</li>
+</ul>
+<h4 id="42-generators">4.2 Generators</h4>
+<ul>
+<li>generates sequence and don't hold them in memory.</li>
+<li>define function with <code>yeild</code> statement.</li>
+<li>Use generator expressions if possible.</li>
+</ul>
+<pre><code class="python">from itertools import count, islice
+# Generator Expression
+evens = (i*2 for i in count()) # Generator
+# Create chunks of the evens generator
+islice(evens, 5, 10) # Generator
+</code></pre>
+
+<h4 id="43-lazily-processing-large-dataset">4.3 Lazily processing large dataset</h4>
+<ul>
+<li>Finding author of Poem problem.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
